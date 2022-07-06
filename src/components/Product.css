@@ -1,0 +1,98 @@
+.main_product {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.product {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.additional_photos {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+
+.additional_photos_img {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.product_info {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    padding-right: 10rem;
+}
+
+.product_attributes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    
+}
+
+.product_picture {
+    margin-right: 5rem;
+    
+}
+
+.product_img {
+    width: 38rem;
+    height: 35rem;
+}
+
+.p_attribute {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+}
+
+.p_title {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.p_description {
+    font-size: 1rem;
+    line-height: 1.7rem;
+    font-family: 'Roboto';
+}
+
+.btn_attribute {
+    width: 3.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    margin-right: .5rem;
+}
+
+.btn_attribute:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn_add {
+    width: 100%;
+    text-transform: uppercase;
+    height: 3rem;
+    margin: 1.5rem 0;
+    border: none;
+    text-align: center;
+    background: #5ECE7B;
+    color: #fff;
+}
+
+.btn_attribute_selected {
+    width: 3.5rem;
+    height: 2.5rem;
+    background-color: #000;
+    color: #fff;
+    margin-right: .5rem;
+}

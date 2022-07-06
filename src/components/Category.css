@@ -1,0 +1,79 @@
+
+.category_products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-bottom: 4rem;
+    align-items: center;
+}
+
+.categoty_product {
+    margin-right: 4.3rem;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.categoty_product:hover {
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    background-color: #fff; 
+}
+
+.category_product_img {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+
+}
+
+.category_outOfStock_product_img {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    opacity: .5;
+
+}
+
+.p_outOfStock {
+    position: absolute;
+    transform: translate(+45%, -750%);
+    color: #8D8F9A;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.p_productName_outOfStock {
+    opacity: 0.5;
+}
+
+.category_product_price {
+    margin-top: .5rem;
+    font-weight: 800;
+}
+
+.category_product_price_outOfStock {
+    background-color: #fff;
+    opacity: .5;
+}
+
+.btn_circleIcon {
+    border: none;
+    position: absolute;
+    top: +19rem;
+    right: +0.5rem;
+    background: rgba(0, 0, 0, 0);
+}
+
+.btn_product_img {
+    text-align: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    position: relative;
+}

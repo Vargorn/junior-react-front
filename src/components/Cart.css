@@ -1,0 +1,141 @@
+.main_cart {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.cart_product {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E5E5;
+
+}
+
+.cart_product_info {
+    width: 70%;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+
+.cart_attribute {
+    display: flex;
+    flex-direction: column;
+}
+
+.border {
+    border-top: 1px solid #E5E5E5;
+    margin-bottom: 2rem;
+}
+
+.cart_order {
+    width: 17.4rem;
+    height: 9.9rem;
+    font-size: 1.5rem;
+    font-family: 'Raleway';
+    color: #1D1F22;
+    margin-bottom: 2rem;
+
+}
+
+.cart_count {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart_picture {
+    width: 20%;
+}
+
+.cart_product_img {
+    width: 15rem;
+    height: 20rem;
+    position: relative;
+}
+
+.p_cartAttribute {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.p_productName {
+    font-size: 1.8rem;
+    font-family: 'Raleway';
+}
+
+.btn_count {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2.3rem;
+    text-align: center;
+    font-family: serif;
+    font-weight: 100;
+    background-color: #fff;
+
+}
+
+.btn_size {
+    width: 3.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    margin-right: .5rem;
+}
+
+.btn_size_selected {
+    width: 3.5rem;
+    height: 2.5rem;
+    background-color: #000;
+    color: #fff;
+    margin-right: .5rem;
+}
+
+.btn_color {
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+    border: 1px solid #000;
+}
+
+.btn_color_selected {
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+    outline: 3px solid #fff;
+    outline-offset: -4px;
+    border: 1px solid #5ECE7B;  
+  
+}
+
+.btn_arrowLeft {
+    border: none;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: -3rem;
+    right: +4rem;
+}
+
+.btn_arrowRight {
+    border: none;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: -3rem;
+    right: +2rem;
+   
+}
+
+span {
+    font-weight: 700;
+}
