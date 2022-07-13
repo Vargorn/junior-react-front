@@ -26,6 +26,7 @@
 }
 
 .product_info {
+    max-width: 35rem;
     font-size: 1.5rem;
     line-height: 2.5rem;
     padding-right: 10rem;
@@ -44,8 +45,8 @@
 }
 
 .product_img {
-    width: 38rem;
-    height: 35rem;
+    max-width: 38rem;
+    max-height: 35rem;
 }
 
 .p_attribute {
@@ -96,3 +97,12 @@
     color: #fff;
     margin-right: .5rem;
 }
+
+.bolder{
+    font-weight: 900;
+}
+
+.data{
+    font-size: '2rem'
+}
+

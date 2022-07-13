@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Context } from '../context/Context';
+import ReactHtmlParser from 'html-react-parser'
 import './Product.css';
-import { Link } from 'react-router-dom';
 
 class Product extends Component {
     constructor(props) {
@@ -41,11 +41,17 @@ class Product extends Component {
     }
 
     addToCart = (product) => {
-        localStorage.setItem(this.props.data.product.id, []);
+        if(product.inStock === false) {
+            return;
+        }
         this.context.addItemToCart(product, this.state.selectedAttributesId);
+        this.setState({ selectedAttributesId: [] })
     }
 
-    changeProductAttribute = (attributeId, id) => {
+    changeProductAttribute = (attributeId, id, inStock) => {
+        if(!inStock){
+            return;
+        }
         let selectedAttributesId = this.state.selectedAttributesId;
         selectedAttributesId[attributeId] = id;
         this.setState({ selectedAttributesId: selectedAttributesId })
@@ -90,7 +96,8 @@ class Product extends Component {
                         </div>
 
                         <div className='product_info'>
-                            <p style={{ fontSize: '2rem' }}>{data.product.name}</p>
+                            <p className='data'>{data.product.brand}</p>
+                            <p className='data'>{data.product.name}</p>
 
                             {data.product.attributes.map((attribute, attributeId) =>
                                 <div className='product_attributes' key={attributeId}>
@@ -100,7 +107,7 @@ class Product extends Component {
                                     <p className='p_attribute'>
                                         {attribute.items.map((item, id) =>
                                             <button
-                                                onClick={() => this.changeProductAttribute(attributeId, id)}
+                                                onClick={() => this.changeProductAttribute(attributeId, id, data.product.inStock)}
                                                 className={this.styleSwitcher(id, attributeId, attribute.name)}
                                                 style={{ backgroundColor: item.value }}
                                                 key={id}>
@@ -115,20 +122,18 @@ class Product extends Component {
                             <p className='p_title'>
                                 Price:
                             </p>
-                            <p style={{ fontWeight: 900 }}>{data.product.prices[currencyIndex].currency.symbol}
+                            <p className='bolder'>{data.product.prices[currencyIndex].currency.symbol}
                                 {data.product.prices[currencyIndex].amount}
                             </p>
-                            <Link to='/cart'>
                                 <button
                                     disabled={this.state.disabled}
                                     onClick={() => this.addToCart(data.product)} className='btn_add'>
                                     Add to cart
                                 </button>
-                            </Link>
                             <div>
-                                <p className='p_description'
-                                    dangerouslySetInnerHTML={{ __html: data.product.description }}>
-                                </p>
+                                <div className='p_description'>
+                                    {ReactHtmlParser(data.product.description)}
+                                </div>
                             </div>
                         </div>
 

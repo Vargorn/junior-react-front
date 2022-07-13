@@ -17,7 +17,7 @@ class Cart extends Component {
             return null;
         }
         return (
-            <div style={{ position: 'relative' }}>
+            <div className='arrows'>
                 <button onClick={() => this.context.onLeftArrowClick(product.gallery.length, productId)} className='btn_arrowLeft'>
                     <img src={arrowLeft} alt="" />
                 </button>
@@ -58,7 +58,7 @@ class Cart extends Component {
                     <div className='cart_product' key={productId}>
                         <div className='cart_product_info'>
                             <p className='p_productName'>{product.name}</p>
-                            <p style={{ fontWeight: 900 }}>
+                            <p className='bolder'>
                                 {product.prices[currencyIndex].currency.symbol}
                                 {product.prices[currencyIndex].amount}
                             </p>
@@ -80,13 +80,14 @@ class Cart extends Component {
                         </div>
                         <div className='cart_count'>
                             <button onClick={() => this.context.increaseProductAmount(productId)} className='btn_count'>+</button>
-                            <p style={{ fontWeight: '900' }}>{product.counter}</p>
+                            <p className='bolder'>{product.counter}</p>
                             <button onClick={() => this.context.decreaseProductAmount(productId, product.id)} className='btn_count'>−</button>
                         </div>
-
                         <div className='cart_picture'>
-                            <img className='cart_product_img' src={product.gallery[product.imageIndex]} alt="" />
-                            {this.displayArrows(product, productId)}
+                            <div>
+                                <img className='cart_product_img' src={product.gallery[product.imageIndex]} alt="" />
+                                {this.displayArrows(product, productId)}
+                            </div>
                         </div>
                     </div>
                 )}

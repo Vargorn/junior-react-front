@@ -8,8 +8,10 @@ const productIdQuery = gql`
     product(id: $id) {
       id
       name
+      brand
       gallery
       description
+      inStock
       attributes {
         id
         name

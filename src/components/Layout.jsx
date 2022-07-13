@@ -51,6 +51,13 @@ class Layout extends Component {
     }
 
     componentDidUpdate() {
+        let quantity = 0;
+        for (let i = 0; i < this.state.cartItems.length; i++) {
+            quantity += this.state.cartItems[i].counter;
+        }
+        if( this.state.quantity !== quantity) {
+            this.calculatePrice();
+        }
         localStorage.setItem('data', JSON.stringify(this.state));
     }
 
@@ -79,7 +86,7 @@ class Layout extends Component {
         }
         else {
             return (
-                <div onClick={() => this.setState({ isHidden: true })} className={this.state.isHidden ? 'currencies_wrapper' : 'currencies_wrapper active'}>
+                <div onClick={() => this.showCurrencyButtons()} className={this.state.isHidden ? 'currencies_wrapper' : 'currencies_wrapper active'}>
                     <div className='currencies'>
                         {data.currencies.map((item, id) =>
                             <button onClick={() => this.onCurrencyChange(id)} className='btn_symbol_label' key={id}>
@@ -111,14 +118,22 @@ class Layout extends Component {
     }
 
     showCurrencyButtons = () => {
+        if(this.state.modalActive){
+            return
+        }
         this.setState({ isHidden: !this.state.isHidden })
     }
 
     changeModalState = () => {
+        if(!this.state.isHidden){
+            return
+        }
         this.setState({ modalActive: !this.state.modalActive });
     }
 
     addItemToCart = (product, selectedAttributesId) => {
+        localStorage.removeItem(product.id);
+        loop:
         for (let i = 0; i < this.state.cartItems.length; i++) {
             if (this.state.cartItems[i].id === product.id) {
                 if(product.attributes.length === 0){
@@ -127,18 +142,17 @@ class Layout extends Component {
                     return this.setState({ cartItems: [...this.state.cartItems] })
                 }
                 for (let j = 0; j < this.state.cartItems[i].selectedAttributesId.length; j++) {
-                    if (this.state.cartItems[i].selectedAttributesId[j] === selectedAttributesId[j]) {
-                        let item = this.state.cartItems[i];
-                        item.counter++;
-                        return this.setState({ cartItems: [...this.state.cartItems] })
+                    if (this.state.cartItems[i].selectedAttributesId[j] !== selectedAttributesId[j]) {
+                        break loop;
                     }
                 }
-
+                let item = this.state.cartItems[i];
+                item.counter++;
+                return this.setState({ cartItems: [...this.state.cartItems] })
             }
         }
         let item = { ...product, imageIndex: 0, counter: 1, selectedAttributesId: selectedAttributesId };
         this.setState({ cartItems: [...this.state.cartItems, item] });
-        this.calculatePrice();
     }
 
     removeProductFromCart = (index, productId) => {
@@ -236,7 +250,7 @@ class Layout extends Component {
                         <div>
                             {this.displayCurrencySymbol()}
                             {this.state.isHidden ? <img src={vectorDown} alt="" /> : <img src={vectorUp} alt="" />}
-                            <button onClick={() => this.setState({ modalActive: true })} className='btn_cart'>
+                            <button onClick={() => this.changeModalState()} className='btn_cart'>
                                 <img className='cart_icon' src={cart_icon} alt="" />
                                 {this.state.quantity > 0 ? <div className='circle'>{this.state.quantity}</div> : null}
                             </button>

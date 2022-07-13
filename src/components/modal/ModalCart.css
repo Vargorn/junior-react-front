@@ -23,14 +23,13 @@
     z-index: 1;
     margin-right: 6.5rem;
     top: 4.5rem;
-    left: 68rem;
     padding: 2rem 1rem;
     background-color: #ffffff;
     height: 42rem;
     width: 22rem;
     transform: scale(0.5);
     transition: .4s all;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .modal_content.active {
@@ -48,7 +47,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     margin-top: .5rem;
     margin-bottom: 2.5rem;
@@ -76,8 +75,8 @@
 }
 
 .item_img {
-    width: 7.5rem;
-    height: 11.8rem;
+    height: 7rem;
+    max-width: 10rem;
 }
 
 .item_count {
@@ -171,5 +170,21 @@
     text-align: center;
     background: #5ECE7B;
     color: #fff;
+}
 
+.bold{
+    font-weight: 700;
+}
+
+.bolder{
+    font-weight: 900;
+}
+
+.marginBottom{
+    margin-bottom: '2rem';
+}
+.img_container{
+    width: 8rem;
+    display: flex;
+    justify-content: flex-end;
 }
