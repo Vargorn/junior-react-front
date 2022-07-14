@@ -21,6 +21,8 @@
 .additional_photos_img {
     width: 6rem;
     height: 6rem;
+    object-fit: cover;
+    object-position: top left;
     margin-bottom: 1.5rem;
     cursor: pointer;
 }

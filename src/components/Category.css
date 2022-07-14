@@ -21,6 +21,7 @@
 .category_product_img {
     width: 20rem;
     height: 20rem;
+    object-fit: contain;
     margin-bottom: 2rem;
 
 }
