@@ -93,6 +93,7 @@ class Product extends Component {
 
                         <div className='product_picture'>
                             <img className='product_img' src={data.product.gallery[this.state.imageId]} alt="" />
+                            {data.product.inStock ? null : <p className='outOfStock'>Out of stock</p>}
                         </div>
 
                         <div className='product_info'>

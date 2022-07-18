@@ -57,6 +57,7 @@ class Cart extends Component {
                 {this.context.state.cartItems.map((product, productId) =>
                     <div className='cart_product' key={productId}>
                         <div className='cart_product_info'>
+                            <p className='p_productName'>{product.brand}</p>
                             <p className='p_productName'>{product.name}</p>
                             <p className='bolder'>
                                 {product.prices[currencyIndex].currency.symbol}

@@ -42,7 +42,11 @@
 }
 
 .product_picture {
+    max-height: 40rem;
     margin-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -108,3 +112,13 @@
     font-size: '2rem'
 }
 
+.outOfStock {
+    position: absolute;
+    top: 36;
+    left: 28;
+    color: #8D8F9A;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 3rem;
+    text-transform: uppercase;
+}

@@ -11,6 +11,7 @@ const query = gql`
       products{
         id
         name
+        brand
         inStock
         attributes{
           id

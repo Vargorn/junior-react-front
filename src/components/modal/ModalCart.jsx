@@ -46,6 +46,7 @@ class ModalCart extends Component {
                 {this.context.state.cartItems.map((product, id) =>
                     <div className='item' key={id}>
                         <div className='item_info'>
+                            <p className='title'>{product.brand}</p>
                             <p className='title'>{product.name}</p>
                             <p className='price'>
                                 {product.prices[currencyIndex].currency.symbol}
@@ -96,7 +97,7 @@ class ModalCart extends Component {
                         <p>{this.displayCurrencySymbol()}{this.context.state.totalPrice}</p>
                     </div>
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div className='links'>
                         <Link to='/cart'>
                             <button onClick={() => this.props.changeModalState()} className='btn_viewBag'>
                                 View bag
