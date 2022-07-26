@@ -143,7 +143,7 @@ class Layout extends Component {
                 }
                 for (let j = 0; j < this.state.cartItems[i].selectedAttributesId.length; j++) {
                     if (this.state.cartItems[i].selectedAttributesId[j] !== selectedAttributesId[j]) {
-                        break loop;
+                        continue loop;
                     }
                 }
                 let item = this.state.cartItems[i];
